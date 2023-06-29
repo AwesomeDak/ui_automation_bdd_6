@@ -24,10 +24,7 @@ public class FrontEndProject04Steps {
         driver = Driver.getDriver();
         frontEndPage = new FrontEndProject04Page();
     }
-    @Given("user navigates to {string}")
-    public void userNavigatesTO(String url){
-        driver.get(url);
-    }
+
 
     @Then("the user should see the {string} heading")
     public void the_user_should_see_the_heading(String str) {
@@ -159,17 +156,17 @@ public class FrontEndProject04Steps {
 
     }
 
-    @When("the user enters the quantity as {2}")
+    @When("the user enters the quantity as {string}")
     public void the_user_enters_the_quantity_as(String str) {
         frontEndPage.quantity.sendKeys(str);
     }
 
-    @When("the user enters the product as {Mouse}")
+    @When("the user enters the product as {string}")
     public void the_user_enters_the_product_as(String str) {
         frontEndPage.product.sendKeys(str);
     }
 
-    @When("the user enters the price as {100}")
+    @When("the user enters the price as {string}")
     public void the_user_enters_the_price_as(String str) {
         frontEndPage.price.sendKeys(str);
 
@@ -183,34 +180,5 @@ public class FrontEndProject04Steps {
             Assert.assertTrue(frontEndPage.newRow.get(i).isDisplayed());
             Assert.assertEquals(frontEndPage.newRow.get(i).getText(),expectedText.get(i));
         }
-    }
-
-    @Then("the user should see the {string} heading")
-    public void theUserShouldSeeTheHeading(String arg0) {
-        
-    }
-
-    @And("the user should see the {string} button is enabled")
-    public void theUserShouldSeeTheButtonIsEnabled(String arg0) {
-    }
-
-    @And("the user should see the {string} input box is enabled")
-    public void theUserShouldSeeTheInputBoxIsEnabled(String arg0) {
-    }
-
-    @Then("the user should see the {string} modal with its heading")
-    public void theUserShouldSeeTheModalWithItsHeading(String arg0) {
-    }
-
-    @And("the user enters the quantity as {string}")
-    public void theUserEntersTheQuantityAs(String arg0) {
-    }
-
-    @And("the user enters the product as {string}")
-    public void theUserEntersTheProductAs(String arg0) {
-    }
-
-    @And("the user enters the price as {string}")
-    public void theUserEntersThePriceAs(String arg0) {
     }
 }
